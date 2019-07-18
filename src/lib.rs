@@ -1,7 +1,7 @@
 mod utils;
 
+use rand::Rng;
 use wasm_bindgen::prelude::*;
-
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
 #[cfg(feature = "wee_alloc")]
@@ -14,6 +14,8 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, Ravin!");
+pub fn greet() -> String {
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let data_string = secret_number.to_string();
+    return data_string.into();
 }
