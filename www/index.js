@@ -7,12 +7,10 @@ $(document).ready(function() {
 });
 
 function resetValues() {
-  let dataValue = wasm.greet();
-  $('.num1').text(dataValue);
-  dataValue = wasm.greet();
-  $('.num2').text(dataValue);
-  dataValue = wasm.greet();
-  $('.num3').text(dataValue);
+  let dataValue = wasm.greet(3);
+  $('.num1').text(dataValue[0]);
+  $('.num2').text(dataValue[1]);
+  $('.num3').text(dataValue[2]);
 }
 
 resetValues();

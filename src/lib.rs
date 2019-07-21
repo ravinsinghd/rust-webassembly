@@ -9,13 +9,12 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet() -> String {
-    let secret_number = rand::thread_rng().gen_range(1, 101);
-    let data_string = secret_number.to_string();
-    return data_string.into();
+pub fn greet(mut number_of_elements: i32) -> Vec<i32> {
+    let mut data = Vec::new();
+    while number_of_elements > 0 {
+        let random_value = rand::thread_rng().gen_range(1, 101);
+        data.push(random_value);
+        number_of_elements = number_of_elements - 1;
+    }
+    return data;
 }
