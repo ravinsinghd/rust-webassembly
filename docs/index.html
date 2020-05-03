@@ -16,6 +16,10 @@
       }
       .container {
         display: flex;
+        justify-content: space-around;
+      }
+      .random-number {
+        display: flex;
         flex-direction: column;
       }
       .num-wrap {
@@ -35,17 +39,35 @@
       .action-button {
         text-align: center;
       }
+      .convert-ascii {
+        margin: 24px 0;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="num-wrap">
-        <div class="num-placeholder num1"></div>
-        <div class="num-placeholder num2"></div>
-        <div class="num-placeholder num3"></div>
+      <div class="random-number">
+        <div class="num-wrap">
+          <div class="num-placeholder num1"></div>
+          <div class="num-placeholder num2"></div>
+          <div class="num-placeholder num3"></div>
+        </div>
+        <div class="action-button">
+          <button class="refresh-btn">Refresh Values</button>
+        </div>
       </div>
-      <div class="action-button">
-        <button class="refresh-btn">Refresh Values</button>
+      <div class="ascii">
+        <div>
+          <label for="asciiInput">ASCII</label>
+          <textarea name="" id="asciiInput" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+          <button class="convert-ascii">Convert</button>
+        </div>
+        <div>
+          <label for="">Unicode</label>
+          <textarea name="" id="unicodeOutput" cols="30" rows="10"></textarea>
+        </div>
       </div>
     </div>
     <script src="./bootstrap.js"></script>

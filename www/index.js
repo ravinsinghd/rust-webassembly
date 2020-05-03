@@ -4,6 +4,9 @@ $(document).ready(function () {
   $('.refresh-btn').click(function () {
     resetValues();
   });
+  $('.convert-ascii').click(function () {
+    convertAscii();
+  });
 });
 
 function resetValues() {
@@ -15,8 +18,9 @@ function resetValues() {
 }
 
 function convertAscii() {
-  let convertedData = wasm.convert_ascii_to_unicode('abc');
-  console.log(convertedData);
+  const asciiVal = $('#asciiInput').val();
+  let convertedData = wasm.convert_ascii_to_unicode(asciiVal);
+  $('#unicodeOutput').val(convertedData);
 }
 
 resetValues();
